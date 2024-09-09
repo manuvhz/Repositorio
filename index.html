@@ -1,0 +1,185 @@
+MANUEL VARGAS HERNANDEZ - LIC INFORMATICA TERCER SEMESTRE //
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+   <style>
+        .cabezote {
+            width: 100%;
+            height: 200px;
+            background-color: rgb(149, 188, 171);
+            display: flex;
+            align-items: center;
+            border-radius: 40px;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZdp1nIZab-Nb68rpOJxY7YXlfw2R4WaeoMg&s');
+            background-size: cover;
+        }
+        .titulo {
+            font-size: 50px;
+            padding: 3%;
+            font-family: "Oswald", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+        }
+        .foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50px;
+            padding: 10px;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Espacio entre los elementos */
+            padding: 10px 20px; 
+            background: linear-gradient(40deg, #4ea005, #8cec35);
+            border-radius: 40px;
+        }
+        .nav-item {
+            position: relative; /* Para posicionar el menú desplegable */
+            font-family: "Oswald", sans-serif;
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+        .nav-item:hover {
+            color: rgb(84, 244, 153);
+        }
+        .dropdown {
+            position: absolute;
+            top: 100%; /* Ubicado justo debajo del elemento principal */
+            left: 0;
+            background-color: #4ea005;
+            display: none; /* Oculto inicialmente */
+            flex-direction: column;
+            width: 150px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .dropdown a {
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown a:hover {
+            background-color: #3a7a04;
+        }
+        .nav-item:hover .dropdown {
+            display: flex; /* Mostrar el menú desplegable al pasar el ratón */
+        }
+        .vid {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body> 
+    <header class="cabezote">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Escudo_Universidad_de_C%C3%B3rdoba.png" alt="xd" class="logo">
+        <span class="titulo">UNIVERSITY OF CORDOBA</span>
+        <img src="https://anmdecolombia.org.co/wp-content/uploads/2020/07/universidad-de-cordoba-1080x675.jpg" alt="" class="foto">
+        <img src="https://caribenoticias247.com.co/wp-content/uploads/2023/04/Photo_1681361320200.webp" alt="" class="foto">
+        <img src="https://repositorio.unicordoba.edu.co/assets/custom/images/bg-unicordoba1.jpg" alt="" class="foto">
+        <img src="https://larazon.co/wp-content/uploads/2022/05/1623238005_237356_1623238115_noticia_normal.jpg" alt="" class="foto">
+    </header>
+
+    <nav class="nav-container">
+        <div class="nav-item">
+            INSTITUTION
+            <div class="dropdown">
+                <a href="#">Overview</a>
+                <a href="#">Mission</a>
+                <a href="#">Vision</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            ACADEMIC
+            <div class="dropdown">
+                <a href="#">Programs</a>
+                <a href="#">Courses</a>
+                <a href="#">Faculties</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            INVESTMENT
+            <div class="dropdown">
+                <a href="#">Projects</a>
+                <a href="#">Funding</a>
+                <a href="#">Research</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            EXTENSION
+            <div class="dropdown">
+                <a href="#">Community</a>
+                <a href="#">Outreach</a>
+                <a href="#">Workshops</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            ADMISSION
+            <div class="dropdown">
+                <a href="#">Apply</a>
+                <a href="#">Requirements</a>
+                <a href="#">Deadlines</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            INTERNATIONAL
+            <div class="dropdown">
+                <a href="#">Partnerships</a>
+                <a href="#">Exchange</a>
+                <a href="#">Programs</a>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="container" style="display: flex; align-items: flex-start; justify-content: center; gap: 20px; padding: 20px; flex-wrap: wrap;">
+
+        <!-- Video and Description -->
+        <div class="video-text-container" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zdoXI5iyhUY?si=njTAPn9kToLThIe3" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                    encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="vid">
+            </iframe>
+            
+            <div class="university-structure" style="margin-top: 20px;">
+                <h2 style="font-family: 'Oswald', sans-serif; font-size: 28px;">The Structure of Our University</h2>
+                <p style="font-family: 'Oswald', sans-serif; max-width: 600px;">
+                    Our university boasts a modern and expansive infrastructure designed to support a high-quality educational experience. Located in the vibrant city of Montería, Colombia, the campus is strategically situated near major transport routes, making it easily accessible to students, staff, and visitors. The university features state-of-the-art facilities, including well-equipped classrooms, advanced laboratories, a comprehensive library, and dedicated spaces for research and innovation. The lush green spaces and recreational areas provide a pleasant environment for both academic and extracurricular activities, reflecting our commitment to fostering a well-rounded student life. Additionally, our campus is designed to be inclusive and accessible, ensuring that all members of our community can fully participate in university life.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Login Box -->
+        <div class="login-box" style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; max-width: 300px; background-color: #f9f9f9;">
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 24px;">Login</h3>
+            <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+                <label for="username" style="font-family: 'Oswald', sans-serif;">Username:</label>
+                <input type="text" id="username" name="username" style="padding: 10px; border-radius: 4px; border: 1px solid #ccc;">
+                
+                <label for="password" style="font-family: 'Oswald', sans-serif;">Password:</label>
+                <input type="password" id="password" name="password" style="padding: 10px; border-radius: 4px; border: 1px solid #ccc;">
+                
+                <button type="submit" style="padding: 10px; border-radius: 4px; border: none; background-color: #4ea005; color: white; font-family: 'Oswald', sans-serif;">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
