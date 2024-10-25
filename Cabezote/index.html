@@ -1,0 +1,335 @@
+MANUEL FRANCISCO VARGAS HERNANDEZ
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Cordoba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(149, 188, 171);
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZdp1nIZab-Nb68rpOJxY7YXlfw2R4WaeoMg&s');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 20px;
+            border-radius: 0 0 40px 40px;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+        .titulo {
+            font-size: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 10px 0;
+        }
+        .cabezote-images {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50px;
+            border: 5px solid #fff;
+            object-fit: cover;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(40deg, #4ea005, #8cec35);
+            border-radius: 40px;
+            margin: 20px 0;
+            padding: 10px;
+        }
+        .nav-container {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-item {
+            position: relative;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        .nav-item:hover {
+            color: rgb(84, 244, 153);
+        }
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #4ea005;
+            display: none;
+            flex-direction: column;
+            width: 150px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .dropdown a {
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown a:hover {
+            background-color: #3a7a04;
+        }
+        .nav-item:hover .dropdown {
+            display: flex;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .video-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1000px;
+            gap: 20px;
+        }
+        .vid {
+            width: 500px;
+            height: 250px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .university-structure {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            text-align: center;
+        }
+        .login-box, .contact-form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .login-box h3, .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .login-box form, .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .login-box input, .login-box button, .contact-form input, .contact-form textarea, .contact-form button {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .login-box button, .contact-form button {
+            border: none;
+            background-color: #4ea005;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-box button:hover, .contact-form button:hover {
+            background-color: #3a7a04;
+        }
+        .news-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .news-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #e8f5e9;
+            transition: background-color 0.3s;
+        }
+        .news-item:hover {
+            background-color: #dcedc8;
+        }
+        footer {
+            background-color: #4ea005;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            .nav-item {
+                margin-bottom: 10px;
+            }
+            .video-text-container {
+                flex-direction: column;
+            }
+            .vid {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body> 
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Escudo_Universidad_de_C%C3%B3rdoba.png" alt="University Logo" class="logo">
+        <h1 class="titulo">University of Cordoba</h1>
+        <div class="cabezote-images">
+            <img src="https://anmdecolombia.org.co/wp-content/uploads/2020/07/universidad-de-cordoba-1080x675.jpg" alt="" class="foto">
+            <img src="https://caribenoticias247.com.co/wp-content/uploads/2023/04/Photo_1681361320200.webp" alt="" class="foto">
+            <img src="https://repositorio.unicordoba.edu.co/assets/custom/images/bg-unicordoba1.jpg" alt="" class="foto">
+            <img src="https://larazon.co/wp-content/uploads/2022/05/1623238005_237356_1623238115_noticia_normal.jpg" alt="" class="foto">
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-item">INSTITUTION
+                <div class="dropdown">
+                    <a href="#">Overview</a>
+                    <a href="#">Mission</a>
+                    <a href="#">Vision</a>
+                </div>
+            </div>
+            <div class="nav-item">ACADEMIC
+                <div class="dropdown">
+                    <a href="#">Programs</a>
+                    <a href="#">Courses</a>
+                    <a href="#">Faculties</a>
+                </div>
+            </div>
+            <div class="nav-item">INVESTMENT
+                <div class="dropdown">
+                    <a href="#">Projects</a>
+                    <a href="#">Funding</a>
+                    <a href="#">Research</a>
+                </div>
+            </div>
+            <div class="nav-item">EXTENSION
+                <div class="dropdown">
+                    <a href="#">Community</a>
+                    <a href="#">Outreach</a>
+                    <a href="#">Workshops</a>
+                </div>
+            </div>
+            <div class="nav-item">ADMISSION
+                <div class="dropdown">
+                    <a href="#">Apply</a>
+                    <a href="#">Requirements</a>
+                    <a href="#">Deadlines</a>
+                </div>
+            </div>
+            <div class="nav-item">INTERNATIONAL
+                <div class="dropdown">
+                    <a href="#">Partnerships</a>
+                    <a href="#">Exchange</a>
+                    <a href="#">Programs</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="video-text-container">
+            <iframe class="vid" src="https://www.youtube.com/embed/zdoXI5iyhUY?si=njTAPn9kToLThIe3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="university-structure">
+                <h2>The Structure of Our University</h2>
+                <p>
+                    Our university boasts a modern and expansive infrastructure designed to support a high-quality educational experience. Located in the vibrant city of Montería, Colombia, the campus is strategically situated near major transport routes, making it easily accessible to students, staff, and visitors. The university features state-of-the-art facilities, including well-equipped classrooms, advanced laboratories, a comprehensive library, and dedicated spaces for research and innovation. The lush green spaces and recreational areas provide a pleasant environment for both academic and extracurricular activities, reflecting our commitment to fostering a well-rounded student life. Additionally, our campus is designed to be inclusive and accessible, ensuring that all members of our community can fully participate in university life.
+                </p>
+            </div>
+        </div>
+
+        <div class="login-box">
+            <h3>Login</h3>
+            <form action="#" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <label for="contact-name">Name:</label>
+                <input type="text" id="contact-name" name="contact-name" required>
+                
+                <label for="contact-email">Email:</label>
+                <input type="email" id="contact-email" name="contact-email" required>
+                
+                <label for="contact-message">Message:</label>
+                <textarea id="contact-message" name="contact-message" rows="4" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="news-section">
+            <h2>Latest News</h2>
+            <div class="news-item">
+                <h3>New Campus Building Unveiled</h3>
+                <p>We are excited to announce the opening of our new state-of-the-art campus building, designed to enhance the student experience and provide cutting-edge facilities for research and collaboration.</p>
+            </div>
+            <div class="news-item">
+                <h3>Research Grant Awarded</h3>
+                <p>Our university has been awarded a significant grant for research in sustainable energy solutions. This grant will support innovative projects and advance our commitment to environmental stewardship.</p>
+            </div>
+            <div class="news-item">
+                <h3>Upcoming Workshops</h3>
+                <p>Join us for a series of workshops on digital skills, entrepreneurship, and more. These workshops are designed to enhance your skills and provide valuable networking opportunities.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 University of Cordoba. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>
