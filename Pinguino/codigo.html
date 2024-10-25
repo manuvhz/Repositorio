@@ -220,7 +220,8 @@
     <div class="snow"></div>
     
 
-    <div class="greeting">¡Hola! Soy un pingüino.</div>
+    <div class="greeting">¡Hola! Soy un pingüino. NO HAGAS CLICK SOBRE MI,
+    </div>
 
     <div class="penguin">
         <div class="penguin-body">
@@ -240,35 +241,71 @@
             <div class="foot foot-right"></div>
         </div>
     </div>
-
     <script>
+        // Movimiento de ojos al seguir el cursor
         document.addEventListener('mousemove', function(e) {
             const eyes = document.querySelectorAll('.eye');
             const centerX = window.innerWidth / 2;
             const centerY = window.innerHeight / 2;
             const angleX = (e.clientX - centerX) / centerX;
             const angleY = (e.clientY - centerY) / centerY;
-
+    
             eyes.forEach(eye => {
                 const eyeOffsetX = angleX * 15;
-                const eyeOffsetY = angleY * 15; /
+                const eyeOffsetY = angleY * 15;
                 eye.style.transform = `translate(${eyeOffsetX}px, ${eyeOffsetY}px)`;
             });
         });
-
+    
+        // Función de parpadeo
         function blink() {
             const eyes = document.querySelectorAll('.eye');
             eyes.forEach(eye => {
                 eye.style.height = '20px'; 
-
-            setTimeout(() => {
-                eyes.forEach(eye => {
+    
+                setTimeout(() => {
                     eye.style.height = '40px'; 
-                });
-            }, 200); 
+                }, 200);
+            });
         }
-
         setInterval(blink, 5000); 
+    
+
+ // Saltar al hacer clic sin modificar su posición base
+ const penguin = document.querySelector('.penguin');
+    penguin.addEventListener('click', () => {
+        penguin.style.transition = 'transform 0.3s ease';
+        penguin.style.transform = 'translateY(-20px)';
+
+        setTimeout(() => {
+            penguin.style.transform = 'translateY(0)';
+        }, 300);
+    });
+
+
+    
+        // Cambio de fondo cada cierto tiempo para simular luz diurna
+        const colors = ['#99cfff', '#87ceeb', '#4682b4', '#1e90ff', '#0f3d73'];
+        let colorIndex = 0;
+        setInterval(() => {
+            document.body.style.backgroundColor = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }, 4000);
+    
+        // Girar las alas más rápido al hacer clic
+        penguin.addEventListener('click', () => {
+            const leftWing = document.querySelector('.penguin-wing-left');
+            const rightWing = document.querySelector('.penguin-wing-right');
+            leftWing.style.animation = 'wave 0.5s infinite ease-in-out';
+            rightWing.style.animation = 'wave 0.5s infinite ease-in-out';
+            
+            setTimeout(() => {
+                leftWing.style.animation = 'wave 2s infinite ease-in-out';
+                rightWing.style.animation = 'wave 2s infinite ease-in-out';
+            }, 1000);
+        });
+    
     </script>
+    
 </body>
 </html>
