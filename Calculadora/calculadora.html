@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventuras en Inglés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0fff4; 
+            color: #333; 
+        }
+
+        header {
+            background-color: #8bc34a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            color: white;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav > ul > li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .dropdown {
+            display: none; 
+            position: absolute;
+            background-color: #4caf50; 
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .dropdown li {
+            display: block;
+        }
+
+        .dropdown a {
+            padding: 10px 15px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #ffeb3b; 
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #fdd835; 
+        }
+
+        .adventure-menu {
+            display: none; 
+            position: absolute;
+            background-color: #8bc34a; 
+            margin-top: 5px;
+            padding: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .adventure-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #8bc34a; 
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aventuras en Inglés</h1>
+        <nav>
+            <ul>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="content">
+            <h2>¡Bienvenidos a la aventura del idioma!</h2>
+            <p>¡Aquí aprenderás inglés de una manera divertida!</p>
+            <button id="start-button">Comienza tu aventura</button>
+            <div class="adventure-menu" id="adventure-menu">
+                <h3>Opciones de Aventura</h3>
+                <a href="#">Juegos</a>
+                <a href="#">Cuentos</a>
+                <a href="#">Videos</a> 
+                <a href="#">Cultura</a> 
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Aventuras en Inglés</p>
+    </footer>
+
+    <script>
+        document.getElementById('start-button').addEventListener('click', function(event) {
+            const adventureMenu = document.getElementById('adventure-menu');
+            adventureMenu.style.display = adventureMenu.style.display === 'block' ? 'none' : 'block'; 
+        });
+
+        window.addEventListener('click', function(event) {
+            const adventureMenu = document.getElementById('adventure-menu');
+            if (!event.target.closest('#start-button')) {
+                adventureMenu.style.display = 'none'; 
+            }
+        });
+    </script>
+</body>
+</html>
